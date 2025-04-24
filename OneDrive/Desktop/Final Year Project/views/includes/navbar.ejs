@@ -1,0 +1,61 @@
+<style>
+    .search-btn {
+        background-color: #fe424d;
+        color: #fff;
+        border-radius: 25px;
+        padding: 0 1rem 0 rem;
+    }
+
+    .search-btn:hover {
+        background-color: #fe424d;
+        color: #fff;
+    }
+
+    .search-btn i {
+        display: inline;
+        margin-right: 0.5rem;
+    }
+
+    .search-inp {
+        border-radius: 25px;
+        padding: 0.5rem 3rem 0.5rem 3rem;
+        font-size: 1rem;
+    }
+</style>
+
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><i class="fa-solid fa-plane-departure" style="color: #264715;"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link " href="/">Home</a>
+                <a class="nav-link" href="/listings">All Listings</a>
+                
+                <a class="nav-link" href="/listings/myreserv">My Reservations</a>
+               
+
+                <% if(currUser && currUser.role==="admin" ){ %>
+                <a class="nav-link" href="/listings/allreserv">All Reservations</a>
+                    <% } %>
+            </div>
+
+            <div class="navbar-nav ms-auto">
+                <% if(currUser && currUser.role==="admin" ){ %>
+                <a class="nav-link" href="/listings/new">Add Resort</a>
+                <% } %>
+                <% if(!currUser){ %>
+                    <a class="nav-link " href="/signup"><b>Sign Up</b></a>
+                    <a class="nav-link" href="/login"><b>Login</b></a>
+                    <% } %>
+                        <% if(currUser){ %>
+                            <a class="nav-link" href="/logout"><b>Logout</b></a>
+                        <% } %>
+                        
+            </div>
+        </div>
+    </div>
+</nav>

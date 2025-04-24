@@ -1,0 +1,97 @@
+
+<% layout("/layouts/boilerplate") %>
+
+    <style>
+        .hero {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+            line-height: 3rem;
+            background:#475141;
+            height: 80vh;
+        }
+
+        .hero-container h1 {
+            font-size: 7vh;
+        }
+
+        .hero-container p {
+             font-size: 2vh;
+            opacity: 0.5;
+        }
+
+        .image {
+            flex: 1;
+            max-width: 100%;
+            height: 60vh;
+            width: 60vh;
+            border-radius: 50%;
+            border: #fff 2px solid;
+            padding: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .image:hover{
+            border-color: #114e2d; /* Change to your desired glow color */
+            box-shadow: 0 0 15px #e2e8e2;
+        }
+
+         @media (max-width: 768px) {
+            .hero {
+                flex-direction: column; /* Stack text and image vertically on small screens */
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-bottom: 20px;
+            }
+
+            .hero-image img {
+                width: 80%; /* Scale image on smaller screens */
+            }
+        }
+
+    /* main */
+
+    .main{
+        height: 100vh;
+    }
+    .con1{
+        height: 30vh;
+        margin-top: 10vh;
+        text-align: center;
+    }
+
+    .con2{
+        height: 50vh;
+        background: #475141;
+    }
+   
+    </style>
+
+    <div class="hero">
+        <div class="hero-container">
+            <h1>Your Gateway to <br> Comfort and<br> Convenience.</h1>
+            <p>Book now and get the best prices.</p>
+            <a href="/login"><button class="btn btn-light">Explore Now</button></a>
+        </div>
+        <div class="hero-img">
+            <!-- Corrected image path -->
+            <img class="image" src="https://i.pinimg.com/736x/19/a2/35/19a2353ffd0673ac444bf506a6e9d5a8.jpg" >
+        </div>
+    </div>
+
+    <div class="main">
+        
+        <div class="con1">
+            <h3>Unforgettable Memories</h3>
+            <h3>Unparalleled Comfort</h3>
+            <p>Experience ultimate travel comfort with our Services.Explore a curated <br>
+                collection of exclusive resorts worldwide for an unforgettable accomodation experience.</p>
+                <button class="btn btn-secondary">Read More</button>
+        </div>
+        
+        <div class="con2">
+
+        </div>
+    </div>
