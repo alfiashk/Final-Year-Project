@@ -1,0 +1,75 @@
+<% layout("/layouts/boilerplate") %>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        table{
+            margin-bottom: 20px;
+        }
+    </style>
+   
+    <div class="container ">
+        
+        <h1>All Reservations</h1>
+        <% if (reservations.length===0) { %>
+            <p>No reservations found.</p>
+            <% } else { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reservation ID</th>
+                            <th>User</th>
+                            <th>Listing</th>
+                            <th>Check-in Date</th>
+                            <th>Check-out Date</th>
+                            <th>Email</th>
+                            <th>Created At</th>
+                            <th>Total Payment</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% reservations.forEach(reservation=> { %>
+                            <tr>
+                                <td>
+                                    <%= reservation._id %>
+                                </td>
+                                <td>
+                                    <%= reservation.user.email %>
+                                </td>
+                                <td>
+                                    <%= reservation.listing.title %>
+                                </td>
+                                <td>
+                                    <%= reservation.checkin.toLocaleDateString() %>
+                                </td>
+                                <td>
+                                    <%= reservation.checkout.toLocaleDateString() %>
+                                </td>
+                                <td>
+                                    <%= reservation.email %>
+                                </td>
+                                <td>
+                                    <%= reservation.createdAt.toLocaleDateString() %>
+                                </td>
+                                <td>₹<%= reservation.paymentAmount.toFixed(2) %>
+                                </td>
+                                <td>
+                                    <a href="/reservations/<%= reservation._id %>/edit" class="btn"style="height: 25px; padding: 0 15px;background-color:#4f5a49; color:#fff ;">Edit</a>
+                                    <form action="/reservations/<%= reservation._id %>?_method=DELETE" method="POST"
+                                        style="display:inline;">
+                                        <button type="submit" class="btn" style="height: 25px; padding: 0 5px; background-color: #4f5a49; color:#fff ;">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <% } %>
+    </div>
+    

@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="col-md-8 col-lg-6"> 
+            <div class="card shadow p-4">
+                <h2 class="text-center">Cancel Your Reservation</h2>
+                <form action="/cancel-reservation" method="POST">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="reason" class="form-label">Reason for Cancellation</label>
+                        <textarea class="form-control" id="reason" name="reason" rows="3" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger btn-md">Send Cancellation Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

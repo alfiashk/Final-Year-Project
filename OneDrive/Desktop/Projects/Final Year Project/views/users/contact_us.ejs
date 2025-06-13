@@ -1,0 +1,65 @@
+<% layout("/layouts/boilerplate") %>
+  <head>
+    <link href="/css/contact_us.css" rel="stylesheet">
+  </head>
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>
+                Have questions or need assistance with your resort booking?
+                Our team is here to help you create unforgettable experiences.
+                Reach out to us anytime!
+            </p>
+    
+            <div class="info-box">
+                <div class="info-item">
+                    <i class="fa-solid fa-phone" style="color: #385c1d;"></i>
+                    <h3>Call Us</h3>
+                    <p>+91 88059  61651</p>
+                </div>
+                <div class="info-item">
+                <i class="fa-solid fa-envelope" style="color: #385c1d;"></i>
+                    <h3>Email</h3>
+                    <p>resortease101@gmail.com</p>
+                </div>
+               
+            </div>
+    
+            <form name="submit-to-google-sheet">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+    
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    
+   
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzPGydIyreVWG4s9s_vOsybC0xibrrKWz9Z28BG8QDGdqbXTKZpHQN4dlJ87WF2_ZIEDA/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("message");
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent successfully!";
+                    setTimeout(function () {
+                        msg.innerHTML = "";
+                    }, 5000)
+                    form.reset();
+
+                })
+                .catch(error => console.error('Error!', error.message))
+        });
+    </script>
