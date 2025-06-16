@@ -1,0 +1,78 @@
+<% layout("/layouts/boilerplate") %>
+    <div class=" mt-3">
+        <div class="col-8 offset-2">
+            <h2>Edit Your Listing</h2>
+
+            <form method="post" action="/listings/allListing/<%= listing._id %>?_method=PUT" novalidate class="needs-validation"
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="listing[title]" value="<%= listing.title%>" type="text" class="form-control" required>
+                    <div class="valid-feedback">Title looks good!</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control"
+                        required> <%= listing.description%></textarea>
+                    <div class="invalid-feedback">Please enter a short description</div>
+                </div>
+
+                <div class="mb-3">
+                    <p>Original Listing Image</p>
+                    <img src="/uploads/<%= originalImageUrl %>" style="height: 30vh; width: 30vh;"/>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload New Image </label>
+                    <input name="listing[image]" type="file" class="form-control" >
+                    <div class="invalid-feedback">Please enter a valid image type JPEG,JPG,AVIF and PNG</div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input name="listing[price]" class="form-control" value="<%= listing.price%>" type="number"
+                            required>
+                        <div class="invalid-feedback">Please enter a valid price</div>
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input name="listing[country]" class="form-control" value="<%= listing.country%>" type="text"
+                            required>
+                        <div class="invalid-feedback">Please enter a valid country</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="locationo" class="form-label">Location</label>
+                    <input name="listing[location]" class="form-control" value="<%= listing.location%>" type="text"
+                        required>
+                    <div class="invalid-feedback">Please enter a valid location</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label" required>Category</label>
+                    <select class="form-control" name="listing[category]">
+                        <option value="room" <%=listing.category==="room" ? "selected" : "" %>>Room</option>
+                        <option value="mountains" <%=listing.category==="mountains" ? "selected" : "" %>>Mountains</option>
+                        <option value="arctic"  <%=listing.category==="arctic" ? "selected" : "" %>>Artic</option>
+                        <option value="camping"  <%=listing.category==="camping" ? "selected" : "" %>>Camping</option>
+                        <option value="castles"  <%=listing.category==="castles" ? "selected" : "" %>>Castles</option>
+                        <option value="swimming pools"  <%=listing.category==="swimming pools" ? "selected" : "" %>>Swimming Pools</option>
+                        <option value="view"  <%=listing.category==="view" ? "selected" : "" %>> Amazing View</option>
+                        <option value="farms"  <%=listing.category==="farms" ? "selected" : "" %>>Farms</option>
+                        <option value="iconic cities"  <%=listing.category==="iconic cities" ? "selected" : "" %>>Iconic Cities</option>
+                        <option value="beach"  <%=listing.category==="beach" ? "selected" : "" %>>Beach</option>
+                        <option value="country side"  <%=listing.category==="country side" ? "selected" : "" %>>Country Side</option>
+                    </select>
+
+                    
+
+                </div>
+
+                <button class="btn btn-dark edit-btn mt-3">Edit</button>
+
+            </form>
+        </div>
+    </div>
