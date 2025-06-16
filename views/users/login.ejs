@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    .borders {
+    border: 1px solid black;
+}
+</style>
+<div class="custom-container">
+    <div class="row mt-5 ">
+        <h1 class="col-6 offset-4" >Login</h1>
+        <div class="col-4 offset-4">
+            <form action="/login" method="POST" class="needs-validation"  novalidate>
+                <div class="mb-3">
+                    <label for="username"  class="form-label">Username</label>
+                    <input name="username"  id="username" type="text" class="form-control borders " required>
+                    <div class="invalid-feedback">Please enter Username!</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                    <input name="password"  id="password" type="password" minlength="6" maxlength="6" class="form-control borders " required>
+                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                    <div class="invalid-feedback">Please enter password of length 6!</div>
+                </div>
+
+                   
+                </div>
+                <button class="btn btn-success">Login</button>&nbsp;&nbsp;<a href="/adminLogin">Admin Login</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+    
+   
+   
+   
+    
