@@ -1,4 +1,7 @@
-{
+{  
+  "engines": {
+      "node":"20.11.1",
+    },
   "name": "final-year-project",
   "version": "1.0.0",
   "description": "Resort management system final year project",
