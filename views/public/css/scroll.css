@@ -1,0 +1,85 @@
+
+
+@keyframes scrollleft {
+    to {
+        left: -450px
+    }
+}
+
+.rev_con {
+    justify-content: space-evenly;
+    position: relative;
+    height: 40vh;
+    margin:3rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0));
+}
+
+.rev {
+    background-color: #e6ede1;
+    height: 40vh;
+    width: 60vh;
+    padding: 30px;
+
+    border-radius: 10px;
+    border:solid 2px white;
+    position: absolute;
+    left: calc(400px * 7);
+    animation-name: scrollleft;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.rev1 {
+    animation-delay: calc(40s / 7 * (7 - 1) * -1);
+}
+
+.rev2 {
+    animation-delay: calc(40s / 7 * (7 - 2) * -1);
+}
+
+.rev3 {
+    animation-delay: calc(40s / 7 * (7 - 3) * -1);
+}
+
+.rev4 {
+    animation-delay: calc(40s / 7 * (7 - 4) * -1);
+}
+
+.rev5 {
+    animation-delay: calc(40s / 7 * (7 - 5) * -1);
+}
+
+.rev6 {
+    animation-delay: calc(40s / 7 * (7 - 6) * -1);
+}
+
+.rev7 {
+    animation-delay: calc(40s / 7 * (7 - 7) * -1);
+}
+
+
+
+.con3 {
+    text-align: center;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+}
+
+.scrolRev {
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+}
