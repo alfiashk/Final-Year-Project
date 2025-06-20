@@ -28,7 +28,7 @@ const reservationRoute = require('./routes/reservationRoute.js');
 const paymentRoute = require('./routes/paymentRoute.js');
 const cancelRoute = require('./routes/cancelReserv.js');
 const reviewRoute = require('./routes/reviewsRoute.js');
-console.log("Mapbox token being used:", process.env.MAP_TOKEN);
+
 
 
 main()
