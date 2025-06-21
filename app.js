@@ -98,7 +98,7 @@ app.use('/adminPass', adminPassRoute);
 app.use('/reservations', reservationRoute);
 app.use('/payment', paymentRoute);
 app.use('/cancel-reservation', cancelRoute);
-app.use('/listings/allListing/:id/review', reviewRoute);
+app.use('/listings/allListing/:id/reviews', reviewRoute);
 app.use('/listings', listingsRoute);
 app.use('/', userRoute);
 
